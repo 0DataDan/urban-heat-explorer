@@ -1,6 +1,6 @@
 """
 app.py
-Urban Heat Island & Surface Reflectance Explorer
+Urban Heat Explorer
 Interactive Geospatial AI Dashboard for Landsat 8/9 Level-2 Analysis
 Features interactive Folium slippy maps with water-masked alpha transparencies,
 floating thermal legends, Plotly density contours, and benchmark vulnerability metrics.
@@ -121,14 +121,14 @@ CITY_REGISTRY = {
     },
 }
 
-st.title("Urban Heat Island & Surface Reflectance Explorer")
-st.caption("Satellite Telemetry, Interactive Slippy Maps & Metropolitan Vulnerability Benchmarks")
+st.title("Urban Heat Explorer")
+st.caption("Landsat 8/9 Thermal & Vegetation Indices")
 
 with st.container():
     c1, c2 = st.columns([3, 1])
     with c1:
         selected_city = st.selectbox(
-            "Target Metropolitan Biome",
+            "Target City",
             options=list(CITY_REGISTRY.keys()),
             format_func=lambda k: CITY_REGISTRY[k]["name"],
             key="main_city_select"
